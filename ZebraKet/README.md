@@ -76,7 +76,6 @@ We tested objective 1 and 2 on D-Wave's Hybrid Solver, a simulated annealer as w
 
 | | | Small | Medium | Large |
 | - | - | - | - | - | 
-| Classical (Set Cover) | Energy<br/>Suppliers (#) | N/A<br/>2 | N/A<br/>2 | N/A<br/>2 | 
 | QUBO (Simulated Annealer) | Energy<br/>Suppliers (#) | 14<br/>7 | 1111<br/>36 | 3694<br/>78 |
 | QUBO (Hybrid Solver) | Energy<br/>Suppliers (#) | -23<br/>3 | 888<br/>36 | 5354<br/>76 | 
 
