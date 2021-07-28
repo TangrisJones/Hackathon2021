@@ -74,18 +74,16 @@ We tested objective 1 and 2 on D-Wave's Hybrid Solver, a simulated annealer as w
 
 ### Results for objective 1: Suppliers (QTY & List of Suppliers)
 
-| | | Small | Medium | Large | Real World|
+| | | Small | Medium | Large |
 | - | - | - | - | - | - |
-| Classical (Set Cover) | Energy<br/>Suppliers (#) | N/A<br/>2 | N/A<br/>2 | N/A<br/>2 | Not run yet |
-| QUBO (Simulated Annealer) | Energy<br/>Suppliers (#) | 14<br/>7 | 1111<br/>36 | 3694<br/>78 | Not run yet |
-| QUBO (Hybrid Solver) | Energy<br/>Suppliers (#) | -23<br/>3 | 888<br/>36 | 5354<br/>76 | Not run yet |
+| Classical (Set Cover) | Energy<br/>Suppliers (#) | N/A<br/>2 | N/A<br/>2 | N/A<br/>2 | 
+| QUBO (Simulated Annealer) | Energy<br/>Suppliers (#) | 14<br/>7 | 1111<br/>36 | 3694<br/>78 |
+| QUBO (Hybrid Solver) | Energy<br/>Suppliers (#) | -23<br/>3 | 888<br/>36 | 5354<br/>76 | 
 
 ### Results for objective 2: Inventory Profit (Total Profit Potential, Inventory)
 
 | | | Small | Medium | Large | Real World|
 | - | - | - | - | - | - |
-| Classical (Knapsack) | Profit (CAD)<br/>Cost (CAD)<br/>Run Time (sec) | Run forever | Run forever | Run forever |  Run forever | 
-| QUBO (Simulated Annealer) | Profit (CAD)<br/>Cost (CAD)<br/>Run Time (sec) | N/A | N/A | N/A | N/A | 
 | QUBO (Hybrid Solver + Fixed Bound) | Profit (CAD)<br/>Cost (CAD)<br/>Run Time (sec) | 403.06<br/>201.53<br/>13.43 | 579.73<br/>289.96<br/>68.69 | Run forever | 83.2<br/>41.6<br/>16.92 | 
 | QUBO (Hybrid Solver + Variable Bound) | Profit (CAD)<br/>Cost (CAD)<br/>Run Time (sec) | 529.92<br/>264.96<br/>11.65 | 584.49<br/>292.24<br/>29.23 | Run forever | 62.14<br/>31.07<br/>12.62 | 
 
