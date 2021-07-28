@@ -94,15 +94,15 @@ No data has been generated yet.
 
 First objective: 
 
-| | | Small | Medium | Large | Real World|
-| - | - | - | - | - | - |
-| QUBO (Hybrid Solver) | Energy<br/>Suppliers (#) | -199<br/>8 | -200<br/>39 | -200<br/>77 | Not run yet |
+| | | Small | Medium | Large | 
+| - | - | - | - | - | 
+| QUBO (Hybrid Solver) | Energy<br/>Suppliers (#) | -199<br/>8 | -200<br/>39 | -200<br/>77 | 
 
 Second objective:
 
-| | | Small | Medium | Large | Real World|
-| - | - | - | - | - | - |
-| QUBO (Hybrid Solver + Fixed Bound) | Profit (CAD)<br/>Cost (CAD) | 4657.9<br/>2328.9 | 11329.1<br/>5664.5 | 13326.2<br/>6663.1 | Not run yet |
+| | | Small | Medium | Large | 
+| - | - | - | - | - |
+| QUBO (Hybrid Solver + Fixed Bound) | Profit (CAD)<br/>Cost (CAD) | 4657.9<br/>2328.9 | 11329.1<br/>5664.5 | 13326.2<br/>6663.1 | 
 
 
 
