@@ -26,6 +26,18 @@ class ProfitQubo(AbstractQubo):
         if profits is not None and costs is not None: 
             self.build(profits, costs)
 
+    def print_best(self):
+        best_solution = self.response.first.sample    
+        best_solution = [best_solution[i] for i in self.x]
+        total_costs = sum([self.costs[index]*count for index, count in enumerate(best_solution)])
+        total_profit = sum([self.profits[index]*count for index, count in enumerate(best_solution)])
+
+        print('Total cost: ', total_costs)
+        print('Total profit: ', total_profit)
+        print('Budget: ', self.budget)
+        print('Best solution: ', best_solution)
+        print('\n')
+
     def build(self, profits: list[float], costs: list[float]): 
         """Bulds the qubo
 
@@ -204,13 +216,5 @@ if __name__ == "__main__":
     qubo = ProfitQubo(profits=profits, costs=costs, budget=300, max_number_of_products=20)
     qubo.solve(sampler)
     print(qubo.response)
-
-    best_solution = qubo.response.first.sample    
-    best_solution = [best_solution[i] for i in qubo.x]
-    total_costs = sum([costs[index]*count for index, count in enumerate(best_solution)])
-    total_profit = sum([profits[index]*count for index, count in enumerate(best_solution)])
-
-    print('Total cost: ', total_costs)
-    print('Total profit: ', total_profit)
-    print('Best solution: ', best_solution)
+    qubo.print_best()
 

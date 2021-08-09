@@ -38,6 +38,14 @@ class SupplierQubo(AbstractQubo):
         self.supplier_inventory = supplier_inventory
         self.qubo = self.construct_bqm()
 
+    def print_best(self):
+        best_solution = self.response.first.sample
+        best_solution = [best_solution[i] for i in self.x]
+        print(f'Found {np.sum(best_solution)} suppliers with energy {self.energy_set[0]}')
+        print('All solutions: ', self.solution_set)
+        print('\n')
+        
+
     def construct_bqm(self):
         """Construct BQM for the set cover problem
         Args:

@@ -36,3 +36,7 @@ class AbstractQubo(ABC):
     @property
     def post_process(self):
         return [self.post_process_function(solution, energy) for solution, energy in zip(self.solution_set, self.energy_set)]
+
+    @abstractmethod
+    def print_best(self):
+        pass

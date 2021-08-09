@@ -24,7 +24,7 @@ class Chain(list):
                 previous_qubo = qubo
                 continue
             next_iteration_data = previous_qubo.post_process[0]
-            print('Starting next iteration with data', next_iteration_data)
+            print('\n\nStarting next iteration with data', next_iteration_data, '\n\n')
             qubo.build(**next_iteration_data)
             qubo.solve(sampler, **sampler_params)
             previous_qubo = qubo
@@ -36,14 +36,12 @@ if __name__ == "__main__":
     from utils.data import read_profit_optimization_data
     from config import standard_mock_data
     from neal import SimulatedAnnealingSampler
-    from dwave.system import LeapHybridDQMSampler
+    from dwave.system import LeapHybridDQMSampler, LeapHybridSampler
     import numpy as np
 
     data_file = standard_mock_data['small']
 
     inventory_requirement, supplier_inventory = read_inventory_optimization_data(data_file)
-
-    # def return_
 
     qubo0 = SupplierQubo(inventory_requirement, supplier_inventory)
     def get_post_process_inventory_function(data_file:str): 
@@ -62,10 +60,11 @@ if __name__ == "__main__":
         return post_process_inventory_qubo
 
     qubo0.define_post_process_function(get_post_process_inventory_function(data_file))
-    sampler0 = SimulatedAnnealingSampler().sample
+    # sampler0 = SimulatedAnnealingSampler().sample
+    sampler0 = LeapHybridSampler().sample
     sampler0_params = dict()
 
-    qubo1 = ProfitQubo()
+    qubo1 = ProfitQubo(budget=300)
     sampler1 = LeapHybridDQMSampler().sample_dqm
     sampler1_params = dict()
 
@@ -77,4 +76,10 @@ if __name__ == "__main__":
     sampler_params = [sampler0_params, sampler1_params]
 
     chain.process_best(samplers, sampler_params)
+
+    print('\n\nChained Solutions\n')
+    print('QUBO 1')
+    qubo0.print_best()
+    print('QUBO 2')
+    qubo1.print_best()
     
